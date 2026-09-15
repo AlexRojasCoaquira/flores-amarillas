@@ -21,7 +21,7 @@ export default function AudioPlayer({ onSparkleSound }: AudioPlayerProps) {
 
   // Initialize audio element with Floricienta on mount
   useEffect(() => {
-    const audio = new Audio("/floricienta.mp3");
+    const audio = new Audio(encodeURI("/Floricienta  Flores Amarillas [Letra].mp3"));
     audio.loop = true;
     audio.volume = volume;
     htmlAudioRef.current = audio;
@@ -182,7 +182,7 @@ export default function AudioPlayer({ onSparkleSound }: AudioPlayerProps) {
 
   const restoreFloricienta = () => {
     if (htmlAudioRef.current) {
-      htmlAudioRef.current.src = "/floricienta.mp3";
+      htmlAudioRef.current.src = encodeURI("/Floricienta  Flores Amarillas [Letra].mp3");
       htmlAudioRef.current.volume = volume;
       setActiveSongName("Floricienta - Flores Amarillas 🌻");
       setIsSynthMode(false);
